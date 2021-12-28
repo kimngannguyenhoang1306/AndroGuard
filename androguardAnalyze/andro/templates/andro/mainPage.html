@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Androguard Analyzer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1 class="text-center">Androguard Analyzer</h1>
+<br>
+<form action="." class="text-center" enctype="multipart/form-data" id="form" method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input class="btn btn-default" style="font-weight: bold; " type="submit">
+</form>
+
+<div class="container">
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                    APK name
+                </a>
+            </div>
+            <div class="collapse show" data-parent="#accordion" id="collapseOne">
+                <div class="card-body">
+                    {{ name }}
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                    Permissions
+                </a>
+            </div>
+            <div class="collapse" data-parent="#accordion" id="collapseTwo">
+                <div class="card-body">
+                    {{ permissions }}
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                    Activities
+                </a>
+            </div>
+            <div class="collapse" data-parent="#accordion" id="collapseThree">
+                <div class="card-body">
+                    {{ activities }}
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+                    Signature
+                </a>
+            </div>
+            <div class="collapse" data-parent="#accordion" id="collapseFour">
+                <div class="card-body">
+                    {{ signature }}
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
+                    Signature Name
+                </a>
+            </div>
+            <div class="collapse" data-parent="#accordion" id="collapseFive">
+                <div class="card-body">
+                    {{ signature_name }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

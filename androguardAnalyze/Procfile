@@ -1,0 +1,1 @@
+web: gunicorn androguardAnalyze.wsgi --timeout 15 --keep-alive 20 --log-level debug
